@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/index.css">
+    <title>Atek Gateway</title>
+    <meta property="og:title" content="Atek Gateway">
+    <meta property="og:description" content="Access peer-to-peer applications through an open proxy.">
+    <meta property="og:image" content="https://atek.app/social.jpg">
+    <meta property="og:url" content="https://atek.app/">
+    <meta name="twitter:title" content="Atek Gateway">
+    <meta name="twitter:description" content="Access peer-to-peer applications through an open proxy.">
+    <meta name="twitter:image" content="https://atek.app/social.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico">
+  </head>
+  <body>
+    <main>
+      <h1><img src="/logo.svg"> Atek Public Gateway</h1>
+      <p>Enter the public key of your application:</p>
+      <form>
+        <input type="text" name="pubkey" placeholder="Public key" required>
+        <button type="submit">Go</button>
+      </form>
+      <h2>Instructions</h2>
+      <pre># Install spork
+$ npm install -g @atek-cloud/spork
+
+# Start a web app at localhost:8000
+$ python3 -m http.server
+
+# Create a p2p socket that reverse proxies to localhost:8000
+$ spork bind -p 8000
+
+# Spork will print a public key which you can input here</pre>
+      <p>
+        Works with <a href="https://spork.sh" title="Spork">spork</a>
+        or any <a href="https://github.com/hyperswarm" title="hyperswarm">Hyperswarm</a> socket.
+      </p>
+      <hr>
+      <p>
+        <strong>Note:</strong> Your connection will be proxied through this service and therefore we'll be able to see the traffic.
+        Use spork / hyperswarm on your devices instead of this gateway for end-to-end privacy.
+      </p>
+      <hr>
+      <p>
+        <small>Part of the <a href="https://atek.cloud" title="Atek Cloud">Atek Cloud</a> project.</small>
+      </p>
+    </main>
+  </body>
+  <script>
+    const HEX_KEY_RE = /[0-9a-f]{64}/i
+    document.querySelector('form').addEventListener('submit', e => {
+      e.preventDefault()
+      let pubkey = e.currentTarget.pubkey.value
+      if (HEX_KEY_RE.test(pubkey)) {
+        // key is in hex, convert to base32
+        // TODO
+      }
+      window.location = `${window.location.protocol}//${pubkey}.${window.location.host}/`
+    })
+  </script>
+</html>

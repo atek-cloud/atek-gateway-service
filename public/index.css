@@ -1,0 +1,77 @@
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin: 0;
+  background:
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAB9JREFUGFdjZEAF/xmR+P8ZGBgYYQJgDkgSRMA5IAEAgq4EBI6THD4AAAAASUVORK5CYII=) repeat,
+    linear-gradient(45deg, #df0cc8, #3800ff) no-repeat right top 100%/contain
+  ;
+  min-height: 100vh;
+}
+
+
+pre,
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  background: #f5f5f5;
+  border-radius: 0.25rem;
+  font-size: 80%;
+  padding: 0.5rem;
+  white-space: pre-wrap;
+}
+
+code {
+  padding: 0.1rem 0.25rem;
+  border-radius: 0.25rem;
+  word-break: break-word;
+}
+
+a {
+  color: #4082f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem 2rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px #0005;
+}
+
+main > :first-child {
+  margin-top: 0;
+}
+main > :last-child {
+  margin-bottom: 0;
+}
+
+h1 img {
+  width: 2rem;
+}
+
+form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+form input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+}
+
+form button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dashed #aaa;
+}
