@@ -14,7 +14,7 @@ code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1rem;
   line-height: 1.4;
-  background: #000;
+  background: #1b1b2b;
   color: #eee;
   border-radius: 0.25rem;
   font-size: 80%;
@@ -44,7 +44,7 @@ h1, h2 {
 main {
   max-width: 500px;
   margin: 2rem auto;
-  background: #112;
+  background: #282840;
   color: #fff;
   padding: 2rem 2rem;
   border-radius: 0.25rem;
@@ -70,18 +70,18 @@ form {
 form input {
   flex: 1;
   padding: 0.5rem 0.75rem;
-  background: #000;
+  background: #1b1b2b;
   color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #6b6b91;
   border-radius: 0.25rem;
 }
 
 form button {
   margin-left: 0.5rem;
   padding: 0.5rem 0.75rem;
-  background: #210091;
-  color: #fff;
-  border: 1px solid #3b00ff;
+  background: #7659db;
+  color: #f0f0ff;
+  border: 0;
   border-radius: 0.25rem;
   cursor: pointer;
 }
