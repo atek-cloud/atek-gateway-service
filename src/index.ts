@@ -43,7 +43,7 @@ const PUBLIC_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '..'
 
   const server = http.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
     const hostparts = (req.headers.host || '').split('.')
-    if (hostparts.length !== 2) {
+    if (hostparts.length !== 3 || hostparts[1] !== 'atek' || hostparts[2] !== 'app') {
       METRICS.homeReqSec.mark()
       return serve(req, res, {
         public: PUBLIC_PATH,
