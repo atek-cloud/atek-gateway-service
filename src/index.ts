@@ -63,9 +63,12 @@ const PUBLIC_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '..'
       return res.writeHead(404).end(`Subdomain is not a public key\n\n${e.toString()}`)
     }
 
+    const headers = Object.assign({}, req.headers, {
+      host: `${remotePublicKeyB32}.atek.app`
+    })
     const proxyReq = http.request(`http://${remotePublicKeyB32}.atek.app${req.url}`, {
       agent,
-      headers: req.headers,
+      headers,
     }, (proxyRes: http.IncomingMessage) => {
       res.writeHead(proxyRes.statusCode || 0, proxyRes.statusMessage, proxyRes.headers)
       proxyRes.pipe(res)
